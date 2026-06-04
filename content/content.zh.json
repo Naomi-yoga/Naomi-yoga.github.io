@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "徐辉 | 个人简历",
+    "description": "徐辉 — Vibecoder / 全栈工程师"
+  },
+  "header": {
+    "subtitle": "个人简历 · Bento"
+  },
+  "footer": "内容由 content.zh.json 驱动 · GitHub Pages",
+  "profile": {
+    "name": "徐辉",
+    "titleHtml": "<span class=\"gradient-ai font-semibold\">Vibecoding</span> 极客 · 全栈工程师",
+    "avatarUrl": null,
+    "avatarAlt": "徐辉"
+  },
+  "cards": [
+    {
+      "id": "about",
+      "template": "text",
+      "gridClass": "md:col-span-2",
+      "delay": "0.12s",
+      "title": "关于我",
+      "bodyHtml": "我是一名重度依赖 <span class=\"gradient-ai font-medium\">Vibecoding</span>（<span class=\"gradient-ai font-medium\">AI</span> 辅助提示词编程）的 IT 开发者。擅长运用大语言模型（LLMs）与 Cursor 等工具，以极致效率将想法落地为生产级代码，并持续追求现代 Web 架构与出色的 UX/UI。"
+    },
+    {
+      "id": "skills-1",
+      "template": "skills",
+      "gridClass": "",
+      "delay": "0.19s",
+      "title": "核心技能",
+      "hint": null,
+      "tags": [
+        { "label": "Prompt Engineering", "variant": "violet" },
+        { "label": "Cursor", "variant": "cyan" }
+      ]
+    },
+    {
+      "id": "skills-2",
+      "template": "skills",
+      "gridClass": "",
+      "delay": "0.26s",
+      "title": null,
+      "hint": null,
+      "tags": [
+        { "label": "Next.js", "variant": "zinc" },
+        { "label": "TypeScript", "variant": "zinc" },
+        { "label": "Tailwind CSS", "variant": "zinc" }
+      ]
+    },
+    {
+      "id": "skills-3",
+      "template": "skills",
+      "gridClass": "",
+      "delay": "0.33s",
+      "title": null,
+      "hint": "更多标签可在此卡片扩展",
+      "tags": [
+        { "label": "LLMs", "variant": "emerald" },
+        { "label": "GitHub Pages", "variant": "emerald" }
+      ]
+    },
+    {
+      "id": "experience",
+      "template": "text",
+      "gridClass": "md:col-span-3",
+      "delay": "0.4s",
+      "title": "高光经历",
+      "bodyHtml": "近期借助 <span class=\"gradient-ai font-medium\">AI</span> 辅助开发，将原计划约两周的全栈交付任务在 <strong class=\"text-zinc-200\">3 天</strong> 内完成：需求拆解、组件实现、样式打磨与基础联调均通过 Cursor + 结构化 Prompt 流水线推进，质量达到可上线标准。"
+    },
+    {
+      "id": "philosophy",
+      "template": "text",
+      "gridClass": "md:col-span-2",
+      "delay": "0.47s",
+      "title": "AI 编程理念",
+      "bodyHtml": "人机结对：人负责意图、架构与验收；模型负责样板、重构与探索。迭代要快，边界要清。"
+    },
+    {
+      "id": "contact",
+      "template": "contact",
+      "gridClass": "",
+      "delay": "0.54s",
+      "title": "联系我"
+    }
+  ],
+  "contact": {
+    "note": "合作或咨询请通过 GitHub 主页发起 Discussion / Issue，或私信联系。",
+    "links": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "href": "https://github.com/Naomi-yoga",
+        "hover": "cyan"
+      }
+    ]
+  }
+}

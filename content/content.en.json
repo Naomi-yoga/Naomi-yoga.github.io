@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Xu Hui | Resume",
+    "description": "Xu Hui — Vibecoder / Full-Stack Engineer"
+  },
+  "header": {
+    "subtitle": "Resume · Bento"
+  },
+  "footer": "Powered by content.en.json · GitHub Pages",
+  "profile": {
+    "name": "Xu Hui",
+    "titleHtml": "<span class=\"gradient-ai font-semibold\">Vibecoder</span> / Full-Stack Engineer",
+    "avatarUrl": null,
+    "avatarAlt": "Xu Hui"
+  },
+  "cards": [
+    {
+      "id": "about",
+      "template": "text",
+      "gridClass": "md:col-span-2",
+      "delay": "0.12s",
+      "title": "About Me",
+      "bodyHtml": "I'm an IT developer who relies heavily on <span class=\"gradient-ai font-medium\">Vibecoding</span> — <span class=\"gradient-ai font-medium\">AI</span>-assisted prompt-driven development. I use LLMs and tools like Cursor to ship production-grade code at exceptional speed, with a focus on modern web architecture and polished UX/UI."
+    },
+    {
+      "id": "skills-1",
+      "template": "skills",
+      "gridClass": "",
+      "delay": "0.19s",
+      "title": "Tech Stack",
+      "hint": null,
+      "tags": [
+        { "label": "Prompt Engineering", "variant": "violet" },
+        { "label": "Cursor", "variant": "cyan" }
+      ]
+    },
+    {
+      "id": "skills-2",
+      "template": "skills",
+      "gridClass": "",
+      "delay": "0.26s",
+      "title": null,
+      "hint": null,
+      "tags": [
+        { "label": "Next.js", "variant": "zinc" },
+        { "label": "TypeScript", "variant": "zinc" },
+        { "label": "Tailwind CSS", "variant": "zinc" }
+      ]
+    },
+    {
+      "id": "skills-3",
+      "template": "skills",
+      "gridClass": "",
+      "delay": "0.33s",
+      "title": null,
+      "hint": "More tags — add or remove in JSON",
+      "tags": [
+        { "label": "LLMs", "variant": "emerald" },
+        { "label": "GitHub Pages", "variant": "emerald" }
+      ]
+    },
+    {
+      "id": "experience",
+      "template": "text",
+      "gridClass": "md:col-span-3",
+      "delay": "0.4s",
+      "title": "Highlight Experience",
+      "bodyHtml": "Recently, with <span class=\"gradient-ai font-medium\">AI</span>-assisted development, I delivered a full-stack milestone that was scoped for ~2 weeks in just <strong class=\"text-zinc-200\">3 days</strong> — requirements breakdown, components, styling, and integration via Cursor and structured prompt workflows, at production-ready quality."
+    },
+    {
+      "id": "philosophy",
+      "template": "text",
+      "gridClass": "md:col-span-2",
+      "delay": "0.47s",
+      "title": "AI Coding Philosophy",
+      "bodyHtml": "Human–AI pairing: you own intent, architecture, and acceptance; the model handles scaffolding, refactors, and exploration. Iterate fast, define boundaries clearly."
+    },
+    {
+      "id": "contact",
+      "template": "contact",
+      "gridClass": "",
+      "delay": "0.54s",
+      "title": "Contact"
+    }
+  ],
+  "contact": {
+    "note": "For collaboration or inquiries, reach out via GitHub (Discussions, Issues, or profile contact).",
+    "links": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "href": "https://github.com/Naomi-yoga",
+        "hover": "cyan"
+      }
+    ]
+  }
+}
