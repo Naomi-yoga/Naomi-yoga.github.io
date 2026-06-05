@@ -235,3 +235,42 @@ A: 默认为隐私考虑只展示 GitHub。需要时在 JSON 中配置 `contact.
 - 使用 `git subtree` / 子模块将本目录推到 Pages 仓库，避免把整个「工作辅助文档」公开。
 
 公开仓库前请确认未提交敏感文件。
+
+---
+
+## 十、内容管理后台（可编辑模块）
+
+### 访问
+
+- 本地：`http://localhost:8080/admin.html`
+- 线上：`https://naomi-yoga.github.io/admin.html`（建议不在首页放链接，仅自己收藏）
+
+### 首次配置
+
+1. 复制 `admin-config.example.js` 为 **`admin-config.js`**（已在 `.gitignore`，勿提交）。
+2. [GitHub → Settings → Developer settings → Personal access tokens](https://github.com/settings/tokens) 创建 **classic** token，勾选 **`repo`**（私有库）或 **`public_repo`**（仅公开库）。
+3. 填写 `githubToken`、`owner: 'Naomi-yoga'`、`repo: 'Naomi-yoga.github.io'`、`adminPassword`（登录用）。
+
+### 可编辑内容
+
+| Tab | 内容 |
+|-----|------|
+| 个人资料 | 姓名、头衔 HTML、头像 URL |
+| 工作经历 | `workExperience` 增删改（中英各一套文案） |
+| 项目 / 教育 | `projects`、`education` 列表 |
+| 技能标签 | 各 `skills` 卡片的 tags |
+| Bento 卡片 | 卡片顺序、模板、text 正文、模块开关 |
+| 联系 | note、链接 |
+| 站点 / 页脚 | meta、header、footer |
+
+点击 **「发布到 GitHub Pages」** 会更新仓库内 `content/content.zh.json` 与 `content.en.json`；1～2 分钟后首页生效。
+
+### 安全说明
+
+- 管理密码只防误点；懂技术的访客仍可能尝试撞库，**务必使用强密码**。
+- **Token 泄露 = 他人可改你仓库**；勿截图、勿提交 `admin-config.js`。
+- 访客无法通过后台改内容，除非拿到你的 Token 与密码。
+
+### 模块规划
+
+见仓库内 **`MODULES.md`**（还缺哪些简历模块、如何扩展）。
