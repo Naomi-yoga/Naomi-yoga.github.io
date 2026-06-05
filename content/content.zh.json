@@ -1,17 +1,17 @@
 {
   "meta": {
-    "title": "徐辉 | 个人简历",
-    "description": "徐辉 — Vibecoder / 全栈工程师"
+    "title": "Naomi | 个人简历",
+    "description": "Naomi — Vibecoder / 全栈工程师"
   },
   "header": {
     "subtitle": "个人简历 · Bento"
   },
   "footer": "内容由 content.zh.json 驱动 · GitHub Pages",
   "profile": {
-    "name": "徐辉",
+    "name": "Naomi",
     "titleHtml": "<span class=\"gradient-ai font-semibold\">Vibecoding</span> 极客 · 全栈工程师",
     "avatarUrl": null,
-    "avatarAlt": "徐辉"
+    "avatarAlt": "Naomi"
   },
   "workExperience": [
     {
