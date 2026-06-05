@@ -90,6 +90,83 @@ function isLinkVisible(link) {
   return true;
 }
 
+function renderWorkCard(card, data) {
+  const grid = card.gridClass ? ` ${card.gridClass}` : '';
+  const items = data.workExperience || [];
+  if (!items.length) return '';
+
+  const listHtml = items
+    .map(
+      (w) => `
+      <div class="border-b border-zinc-800 pb-5 last:border-0 last:pb-0" data-work-id="${escapeHtml(w.id)}">
+        <div class="flex flex-wrap items-baseline justify-between gap-2">
+          <h3 class="font-medium text-zinc-100">${escapeHtml(w.company)}</h3>
+          <span class="text-xs text-zinc-500">${escapeHtml(w.period)}</span>
+        </div>
+        <p class="mt-1 text-sm text-violet-300/90">${escapeHtml(w.role)}</p>
+        <p class="mt-2 text-sm leading-relaxed text-zinc-400">${w.bodyHtml || ''}</p>
+      </div>`
+    )
+    .join('');
+
+  return `
+    <article class="${CARD_BASE} p-8 flex flex-col gap-5${grid}" style="animation-delay: ${card.delay || '0s'}" data-card-id="${escapeHtml(card.id)}">
+      <h2 class="text-lg font-semibold text-zinc-100">${escapeHtml(card.title)}</h2>
+      <div class="space-y-5">${listHtml}</div>
+    </article>`;
+}
+
+function renderProjectsCard(card, data) {
+  if (card.enabled === false) return '';
+  const items = data.projects || [];
+  if (!items.length) return '';
+
+  const grid = card.gridClass ? ` ${card.gridClass}` : '';
+  const listHtml = items
+    .map((p) => {
+      const title = p.href
+        ? `<a href="${escapeHtml(p.href)}" target="_blank" rel="noopener noreferrer" class="font-medium text-zinc-100 hover:text-cyan-400 transition-colors">${escapeHtml(p.name)}</a>`
+        : `<span class="font-medium text-zinc-100">${escapeHtml(p.name)}</span>`;
+      return `
+      <div class="rounded-2xl border border-zinc-800 bg-zinc-950/50 p-4" data-project-id="${escapeHtml(p.id)}">
+        ${title}
+        <p class="mt-1 text-xs text-zinc-500">${escapeHtml(p.tech || '')}</p>
+        <p class="mt-2 text-sm text-zinc-400">${escapeHtml(p.description || '')}</p>
+      </div>`;
+    })
+    .join('');
+
+  return `
+    <article class="${CARD_BASE} p-8${grid}" style="animation-delay: ${card.delay || '0s'}" data-card-id="${escapeHtml(card.id)}">
+      <h2 class="mb-4 text-lg font-semibold">${escapeHtml(card.title)}</h2>
+      <div class="grid gap-3 sm:grid-cols-2">${listHtml}</div>
+    </article>`;
+}
+
+function renderEducationCard(card, data) {
+  if (card.enabled === false) return '';
+  const items = data.education || [];
+  if (!items.length) return '';
+
+  const grid = card.gridClass ? ` ${card.gridClass}` : '';
+  const listHtml = items
+    .map(
+      (e) => `
+      <div data-edu-id="${escapeHtml(e.id)}">
+        <p class="font-medium text-zinc-100">${escapeHtml(e.school)}</p>
+        <p class="mt-1 text-sm text-zinc-400">${escapeHtml(e.degree)}</p>
+        <p class="mt-1 text-xs text-zinc-500">${escapeHtml(e.period)}</p>
+      </div>`
+    )
+    .join('');
+
+  return `
+    <article class="${CARD_BASE} p-6 flex flex-col justify-center min-h-[140px]${grid}" style="animation-delay: ${card.delay || '0s'}" data-card-id="${escapeHtml(card.id)}">
+      <h2 class="mb-3 text-lg font-semibold">${escapeHtml(card.title)}</h2>
+      <div class="space-y-4">${listHtml}</div>
+    </article>`;
+}
+
 function renderContactCard(card, contact) {
   const grid = card.gridClass ? ` ${card.gridClass}` : '';
   const cfg = contact || {};
@@ -135,11 +212,24 @@ function renderCard(card, data) {
       return renderTextCard(card);
     case 'skills':
       return renderSkillsCard(card);
+    case 'work':
+      return renderWorkCard(card, data);
+    case 'projects':
+      return renderProjectsCard(card, data);
+    case 'education':
+      return renderEducationCard(card, data);
     case 'contact':
       return renderContactCard(card, data.contact);
     default:
       return '';
   }
+}
+
+/** @param {'zh'|'en'} lang */
+export async function loadContent(lang) {
+  const res = await fetch(`content/content.${lang}.json`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
 }
 
 function applyMeta(data) {
@@ -164,9 +254,7 @@ export async function renderResume(lang) {
 
   let data;
   try {
-    const res = await fetch(`content/content.${lang}.json`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    data = await res.json();
+    data = await loadContent(lang);
   } catch (err) {
     root.innerHTML = `<p class="col-span-full text-center text-sm text-red-400">Failed to load content/content.${lang}.json — use a local HTTP server (see GITHUB_PAGES.md).</p>`;
     console.error(err);

@@ -13,6 +13,39 @@
     "avatarUrl": null,
     "avatarAlt": "徐辉"
   },
+  "workExperience": [
+    {
+      "id": "work-1",
+      "company": "（公司 / 团队名称）",
+      "role": "全栈工程师",
+      "period": "2024 — 至今",
+      "bodyHtml": "借助 <span class=\"gradient-ai font-medium\">AI</span> 辅助开发，将原计划约两周的全栈交付在 <strong class=\"text-zinc-200\">3 天</strong> 内完成：需求拆解、组件实现、样式与联调通过 Cursor + 结构化 Prompt 推进，达到可上线标准。"
+    },
+    {
+      "id": "work-2",
+      "company": "（上一段经历 — 可编辑或删除）",
+      "role": "IT 开发",
+      "period": "2022 — 2024",
+      "bodyHtml": "负责业务系统开发与维护；逐步引入 LLM 工具提升交付效率。在管理后台可增删本条。"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "name": "个人简历 Bento 站",
+      "tech": "HTML · Tailwind · JSON 驱动",
+      "href": "https://naomi-yoga.github.io/",
+      "description": "中英双语、GitHub Pages 部署、内容可配置。"
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-1",
+      "school": "（院校名称）",
+      "degree": "学士 · 专业名称",
+      "period": "20xx — 20xx"
+    }
+  ],
   "cards": [
     {
       "id": "about",
@@ -53,19 +86,26 @@
       "gridClass": "",
       "delay": "0.33s",
       "title": null,
-      "hint": "更多标签可在此卡片扩展",
+      "hint": "更多标签可在管理后台或 JSON 中扩展",
       "tags": [
         { "label": "LLMs", "variant": "emerald" },
         { "label": "GitHub Pages", "variant": "emerald" }
       ]
     },
     {
-      "id": "experience",
-      "template": "text",
+      "id": "work",
+      "template": "work",
       "gridClass": "md:col-span-3",
       "delay": "0.4s",
-      "title": "高光经历",
-      "bodyHtml": "近期借助 <span class=\"gradient-ai font-medium\">AI</span> 辅助开发，将原计划约两周的全栈交付任务在 <strong class=\"text-zinc-200\">3 天</strong> 内完成：需求拆解、组件实现、样式打磨与基础联调均通过 Cursor + 结构化 Prompt 流水线推进，质量达到可上线标准。"
+      "title": "工作经历"
+    },
+    {
+      "id": "projects",
+      "template": "projects",
+      "gridClass": "md:col-span-3",
+      "delay": "0.44s",
+      "title": "项目作品",
+      "enabled": true
     },
     {
       "id": "philosophy",
@@ -74,6 +114,14 @@
       "delay": "0.47s",
       "title": "AI 编程理念",
       "bodyHtml": "人机结对：人负责意图、架构与验收；模型负责样板、重构与探索。迭代要快，边界要清。"
+    },
+    {
+      "id": "education",
+      "template": "education",
+      "gridClass": "",
+      "delay": "0.5s",
+      "title": "教育背景",
+      "enabled": true
     },
     {
       "id": "contact",
