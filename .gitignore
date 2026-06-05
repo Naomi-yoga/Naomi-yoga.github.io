@@ -1,1 +1,14 @@
+# --- 密钥 / 本地配置（切勿提交）---
 admin-config.js
+.env
+.env.*
+*.pem
+
+# --- 本地说明文档（不上传仓库）---
+GITHUB_PAGES.md
+MODULES.md
+
+# --- 编辑器 / 系统 ---
+.DS_Store
+Thumbs.db
+*.log
