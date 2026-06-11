@@ -1,3 +1,6 @@
+node_modules/
+dist/
+
 # --- 密钥 / 本地配置（切勿提交）---
 admin-config.js
 .env
